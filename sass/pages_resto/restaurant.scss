@@ -1,0 +1,181 @@
+@use "../utils/mixins";
+@use "../utils/colors";
+@use "../utils/animation";
+
+
+.position_arrow {
+    position: relative;
+    & .arrow {
+        position: absolute;
+        font-weight: 900;
+        font-size: 20px;
+        top: 28px;
+        left: 56px;
+        cursor: pointer;
+
+        & .fa-arrow-left {
+            transition: all .2s;
+        }
+        
+        & .fa-arrow-left:hover {
+            transform: scale(1.2);
+        }
+    }
+    
+}
+
+.image_resto img {
+    @include mixins.img_resto;
+}
+
+main {
+    .font-fam {
+        font-family: "Shrikhand", sans-serif;
+        font-size: 24px;
+        margin-left: 20px;
+        padding: 20px 0 20px 0;
+    }
+
+    & .menu_description {
+        position: relative;
+        background-color: colors.$lightergrey;
+        border-radius: 32px 32px 0 0;
+        margin-top: -50px;
+        @include mixins.heart-resto;
+    }
+
+    .menu_restaurant {
+        background-color: colors.$lightergrey;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+        margin-top: -20px;
+        padding-bottom: 16px;
+        
+        .menu_grid {
+            position: relative;
+
+            & h3 {
+                margin-top: 20px;
+                font-weight: 400;
+                text-transform: uppercase;
+                position: relative;
+                padding: 8px;
+                margin-bottom: 18px;
+                    
+                &::after {
+                    content:"";
+                    height: 4px;
+                    width: 48px;
+                    background-color: colors.$tertiary;
+                    position: absolute;
+                    left: 8px;
+                    bottom: 0;
+                }
+            }
+            
+            & .choose_menu {
+                box-shadow: 4px 4px 16px rgb(0 0 0 / 10%);
+                background-color: colors.$white;
+                border-radius: 12px;
+                display: flex;
+                overflow: hidden;
+                cursor: pointer;
+                animation: appear 1s;
+                animation-fill-mode: both;
+                margin-bottom: 12px;
+                
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: 100ms * $i;
+                    }
+                }
+                
+                & .menu_flex {
+                    padding: 16px;
+                    overflow: hidden;
+                    
+                    & h4, p {
+                        margin: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+                
+                & .price_check {
+                    margin-left: auto;
+                    display: flex;
+                    margin-right: -76px;
+                    transition-duration: .5s;
+                    
+                    & .price {
+                        display: flex;
+                        align-items: flex-end;
+                        margin-left: auto;
+                        padding: 16px;
+                        font-weight: bold;
+                    }
+                    
+                    & .check_menu {
+                        display: flex;
+                        align-items: center;
+                        background-color: colors.$tertiary;
+                        padding: 22px;
+                        
+                        & .color_check {
+                            background-color: colors.$white;
+                            border-radius: 100px;
+                            width: 25.6px;
+                            height: 25.6px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition-duration: .6s;
+                            transform: rotate(-270deg);
+                            
+                            & .fa-check {
+                                color: colors.$tertiary;
+                            }
+                        }
+                    }
+                }
+                
+                &:hover .check_menu .color_check{
+                transform: rotate(0);
+            }
+            
+            
+            &:hover .price_check {
+                margin-right: 0;
+                transition-duration: .5s;
+            }
+            
+        }
+        
+        
+    }
+
+    @media (max-width: 1460px) {
+        grid-template-columns: repeat(1fr);
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.button_order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: colors.$lightergrey;
+    padding: 48px;
+    opacity: 0.9;
+    
+    .order {
+        color: colors.$white;
+        align-items: center;
+        @include mixins.button;
+    }
+    }
+}

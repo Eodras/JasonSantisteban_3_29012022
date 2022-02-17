@@ -1,0 +1,60 @@
+@use "../utils/colors";
+
+.footers {
+    background-color: #353535;
+    padding-bottom: 25px;
+
+    & .title {
+        margin-left: 2%;
+        padding-top: 16px;
+        padding-bottom: 14px;
+        font-family: "Shrikhand", sans-serif;
+        font-size: 19.2px;
+
+        &, a {
+            color: colors.$white;
+        }
+    }
+    
+    
+    & .footer_full {
+        margin-left: 2%;
+
+        & .white {
+            color: colors.$white;
+        }
+        & a:hover {
+            text-decoration: underline;
+        }
+
+        & .icone_footer1 {
+            & a {
+                margin-left: 10px;
+                color: colors.$white;
+            }
+    
+            & i {
+                color: colors.$white;
+            }
+        }
+
+        & .icone_footer2 {
+            margin-bottom: 8px;
+            margin-top: 8px;
+
+            & a {
+                margin-left: 3px;
+                color: colors.$white;
+            }
+    
+            & i {
+                color: colors.$white;
+            }
+        }
+
+        & .footer_bottom {
+            margin-bottom: 8px;
+        }
+    }
+
+}

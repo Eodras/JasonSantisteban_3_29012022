@@ -1,0 +1,16 @@
+.city {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f3f3;
+    gap: 16px;
+
+    & .marker_size {
+        font-size: 20px;
+    }
+
+    .text-city {
+        font-weight: 700;
+        font-size: 19px;
+    }
+}

@@ -1,0 +1,85 @@
+@mixin gradient {
+    background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+}
+
+@mixin transition {
+    transition: transform .2s;
+}
+
+@mixin zoom {
+    transform: scale(1.02);
+}
+
+@mixin img_resto {
+    display: block;
+    max-width: 100%;
+    max-height: 512px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@mixin heart {
+    cursor: pointer;
+    & i {
+        font-size: 28px;
+        position: absolute;
+        right: 24px;
+        top: 20px;
+    }
+    
+    & .fas {
+        color: transparent;
+        @include gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        transition-duration: .30s;
+    }
+
+    & .fas:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@mixin heart-resto {
+    & i {
+        font-size: 28px;
+        position: absolute;
+        right: 38px;
+        top: 28px;
+        cursor: pointer;
+    }
+    
+    & .fas {
+        color: transparent;
+        @include gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        transition-duration: .30s;
+    }
+
+    & .fas:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@mixin button {
+    @include gradient;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 17.2px;
+    border: none;
+    box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+    background-color: #686868;
+    cursor: pointer;
+    transition-duration: .25s;
+
+    &:hover {
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.50);
+        opacity: 0.9;
+    }
+}
