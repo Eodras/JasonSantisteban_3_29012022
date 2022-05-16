@@ -7,10 +7,6 @@
     background-color: #fafafa;
     padding: 1px 0 18px 0;
 
-    .explorer h2 {
-        margin-top: 32px;
-    }
-
     .sub-explorer {
         font-weight: 300;
         margin-bottom: 12px;
@@ -29,7 +25,6 @@
     display: grid;
     place-items: center;
     background-color: colors.$white;
-    height: 100vh;
     inset: 0;
     z-index: 1;
     opacity: 0.8;
